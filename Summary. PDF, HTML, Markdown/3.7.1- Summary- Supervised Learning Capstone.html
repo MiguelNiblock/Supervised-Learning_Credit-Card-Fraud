@@ -1,0 +1,1243 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>3.7.1- Summary- Supervised Learning Capstone</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:first-child { margin-top: -20px; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  @page { margin: 20mm 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="mermaid"] svg, [lang="flow"] svg { max-width: 100%; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow-y: hidden; overflow-x: auto; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 30px; z-index: 3; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; word-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { word-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+:root { --side-bar-bg-color: #fafafa; --control-text-color: #777; }
+html { font-size: 16px; }
+body { font-family: "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; color: rgb(51, 51, 51); line-height: 1.6; }
+#write { max-width: 860px; margin: 0px auto; padding: 30px 30px 100px; }
+#write > ul:first-child, #write > ol:first-child { margin-top: 30px; }
+a { color: rgb(65, 131, 196); }
+h1, h2, h3, h4, h5, h6 { position: relative; margin-top: 1rem; margin-bottom: 1rem; font-weight: bold; line-height: 1.4; cursor: text; }
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor { text-decoration: none; }
+h1 tt, h1 code { font-size: inherit; }
+h2 tt, h2 code { font-size: inherit; }
+h3 tt, h3 code { font-size: inherit; }
+h4 tt, h4 code { font-size: inherit; }
+h5 tt, h5 code { font-size: inherit; }
+h6 tt, h6 code { font-size: inherit; }
+h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
+h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
+h3 { font-size: 1.5em; line-height: 1.43; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1em; }
+h6 { font-size: 1em; color: rgb(119, 119, 119); }
+p, blockquote, ul, ol, dl, table { margin: 0.8em 0px; }
+li > ol, li > ul { margin: 0px; }
+hr { height: 2px; padding: 0px; margin: 16px 0px; background-color: rgb(231, 231, 231); border: 0px none; overflow: hidden; box-sizing: content-box; }
+li p.first { display: inline-block; }
+ul, ol { padding-left: 30px; }
+ul:first-child, ol:first-child { margin-top: 0px; }
+ul:last-child, ol:last-child { margin-bottom: 0px; }
+blockquote { border-left: 4px solid rgb(223, 226, 229); padding: 0px 15px; color: rgb(119, 119, 119); }
+blockquote blockquote { padding-right: 0px; }
+table { padding: 0px; word-break: initial; }
+table tr { border-top: 1px solid rgb(223, 226, 229); margin: 0px; padding: 0px; }
+table tr:nth-child(2n), thead { background-color: rgb(248, 248, 248); }
+table tr th { font-weight: bold; border-width: 1px 1px 0px; border-top-style: solid; border-right-style: solid; border-left-style: solid; border-top-color: rgb(223, 226, 229); border-right-color: rgb(223, 226, 229); border-left-color: rgb(223, 226, 229); border-image: initial; border-bottom-style: initial; border-bottom-color: initial; text-align: left; margin: 0px; padding: 6px 13px; }
+table tr td { border: 1px solid rgb(223, 226, 229); text-align: left; margin: 0px; padding: 6px 13px; }
+table tr th:first-child, table tr td:first-child { margin-top: 0px; }
+table tr th:last-child, table tr td:last-child { margin-bottom: 0px; }
+.CodeMirror-lines { padding-left: 4px; }
+.code-tooltip { box-shadow: rgba(0, 28, 36, 0.3) 0px 1px 1px 0px; border-top: 1px solid rgb(238, 242, 242); }
+.md-fences, code, tt { border: 1px solid rgb(231, 234, 237); background-color: rgb(248, 248, 248); border-radius: 3px; padding: 2px 4px 0px; font-size: 0.9em; }
+code { background-color: rgb(243, 244, 244); padding: 0px 2px; }
+.md-fences { margin-bottom: 15px; margin-top: 15px; padding-top: 8px; padding-bottom: 6px; }
+.md-task-list-item > input { margin-left: -1.3em; }
+@media print {
+  html { font-size: 13px; }
+  table, pre { break-inside: avoid; }
+  pre { word-wrap: break-word; }
+}
+.md-fences { background-color: rgb(248, 248, 248); }
+#write pre.md-meta-block { padding: 1rem; font-size: 85%; line-height: 1.45; background-color: rgb(247, 247, 247); border: 0px; border-radius: 3px; color: rgb(119, 119, 119); margin-top: 0px !important; }
+.mathjax-block > .code-tooltip { bottom: 0.375rem; }
+.md-mathjax-midline { background: rgb(250, 250, 250); }
+#write > h3.md-focus::before { left: -1.5625rem; top: 0.375rem; }
+#write > h4.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+#write > h5.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+#write > h6.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+.md-image > .md-meta { border-radius: 3px; padding: 2px 0px 0px 4px; font-size: 0.9em; color: inherit; }
+.md-tag { color: rgb(167, 167, 167); opacity: 1; }
+.md-toc { margin-top: 20px; padding-bottom: 20px; }
+.sidebar-tabs { border-bottom: none; }
+#typora-quick-open { border: 1px solid rgb(221, 221, 221); background-color: rgb(248, 248, 248); }
+#typora-quick-open-item { background-color: rgb(250, 250, 250); border-color: rgb(254, 254, 254) rgb(229, 229, 229) rgb(229, 229, 229) rgb(238, 238, 238); border-style: solid; border-width: 1px; }
+.on-focus-mode blockquote { border-left-color: rgba(85, 85, 85, 0.12); }
+header, .context-menu, .megamenu-content, footer { font-family: "Segoe UI", Arial, sans-serif; }
+.file-node-content:hover .file-node-icon, .file-node-content:hover .file-node-open-state { visibility: visible; }
+.mac-seamless-mode #typora-sidebar { background-color: var(--side-bar-bg-color); }
+.md-lang { color: rgb(180, 101, 77); }
+.html-for-mac .context-menu { --item-hover-bg-color: #E6F0FE; }
+#md-notification .btn { border: 0px; }
+.dropdown-menu .divider { border-color: rgb(229, 229, 229); }
+
+
+
+
+
+ .typora-export li, .typora-export p, .typora-export,  .footnote-line {white-space: normal;} 
+</style>
+</head>
+<body class='typora-export' >
+<div  id='write'  class = 'is-node'><div class='md-toc' mdtype='toc'><p class="md-toc-content"><span class="md-toc-item md-toc-h1" data-ref="n2"><a class="md-toc-inner" href="#header-n2">1. Introduction to Dataset</a></span><span class="md-toc-item md-toc-h2" data-ref="n13"><a class="md-toc-inner" href="#header-n13">Preview of Data</a></span><span class="md-toc-item md-toc-h1" data-ref="n16"><a class="md-toc-inner" href="#header-n16">2. Exploratory Data Analysis</a></span><span class="md-toc-item md-toc-h2" data-ref="n22"><a class="md-toc-inner" href="#header-n22">Checking for Missing Data.</a></span><span class="md-toc-item md-toc-h2" data-ref="n28"><a class="md-toc-inner" href="#header-n28">Class Imbalance</a></span><span class="md-toc-item md-toc-h2" data-ref="n39"><a class="md-toc-inner" href="#header-n39">Visualizing distributions. </a></span><span class="md-toc-item md-toc-h2" data-ref="n52"><a class="md-toc-inner" href="#header-n52">‘Amount’ Distribution</a></span><span class="md-toc-item md-toc-h2" data-ref="n68"><a class="md-toc-inner" href="#header-n68">‘Time’ Distribution</a></span><span class="md-toc-item md-toc-h1" data-ref="n80"><a class="md-toc-inner" href="#header-n80">3. Modeling Outcome of Interest</a></span><span class="md-toc-item md-toc-h2" data-ref="n81"><a class="md-toc-inner" href="#header-n81">Feature Engineering</a></span><span class="md-toc-item md-toc-h3" data-ref="n87"><a class="md-toc-inner" href="#header-n87">Time-Based Features</a></span><span class="md-toc-item md-toc-h3" data-ref="n93"><a class="md-toc-inner" href="#header-n93">Feature: Time_hour &gt; 4</a></span><span class="md-toc-item md-toc-h3" data-ref="n99"><a class="md-toc-inner" href="#header-n99">Feature: $0 Fraud Amounts...?</a></span><span class="md-toc-item md-toc-h3" data-ref="n113"><a class="md-toc-inner" href="#header-n113">Add the Rest: PCA and Class</a></span><span class="md-toc-item md-toc-h2" data-ref="n118"><a class="md-toc-inner" href="#header-n118">Data Processing (On the Training Data Only)</a></span><span class="md-toc-item md-toc-h3" data-ref="n124"><a class="md-toc-inner" href="#header-n124">Balancing Classes</a></span><span class="md-toc-item md-toc-h3" data-ref="n151"><a class="md-toc-inner" href="#header-n151">Removing High-Correlation Outliers</a></span><span class="md-toc-item md-toc-h4" data-ref="n167"><a class="md-toc-inner" href="#header-n167">Approach for Outlier Removal</a></span><span class="md-toc-item md-toc-h2" data-ref="n177"><a class="md-toc-inner" href="#header-n177">Feature Selection</a></span><span class="md-toc-item md-toc-h2" data-ref="n190"><a class="md-toc-inner" href="#header-n190">Test and Compare Classifiers</a></span><span class="md-toc-item md-toc-h3" data-ref="n194"><a class="md-toc-inner" href="#header-n194">First-Run: Predictions on Default Parameters</a></span><span class="md-toc-item md-toc-h3" data-ref="n200"><a class="md-toc-inner" href="#header-n200">Logistic Regression- GridSearch &amp; Recall Score.</a></span><span class="md-toc-item md-toc-h3" data-ref="n214"><a class="md-toc-inner" href="#header-n214">Pyrrhic Victory-</a></span><span class="md-toc-item md-toc-h2" data-ref="n231"><a class="md-toc-inner" href="#header-n231">Optimize Specificity, while Maintaining 100% Recall</a></span><span class="md-toc-item md-toc-h3" data-ref="n232"><a class="md-toc-inner" href="#header-n232">Custom Scoring Function</a></span><span class="md-toc-item md-toc-h3" data-ref="n239"><a class="md-toc-inner" href="#header-n239">Logistic Regression- Optimized</a></span><span class="md-toc-item md-toc-h3" data-ref="n249"><a class="md-toc-inner" href="#header-n249">DecisionTreeClassifier- Optimized</a></span><span class="md-toc-item md-toc-h3" data-ref="n263"><a class="md-toc-inner" href="#header-n263">Support Vector Classifier- Optimized</a></span><span class="md-toc-item md-toc-h3" data-ref="n276"><a class="md-toc-inner" href="#header-n276">KNeighborsClassifier- Optimized</a></span><span class="md-toc-item md-toc-h3" data-ref="n284"><a class="md-toc-inner" href="#header-n284">Imblearn’ BalancedRandomForest- Optimized</a></span><span class="md-toc-item md-toc-h3" data-ref="n297"><a class="md-toc-inner" href="#header-n297">SKlearn’ RandomForestClassifier- Optimized</a></span><span class="md-toc-item md-toc-h1" data-ref="n316"><a class="md-toc-inner" href="#header-n316">4. Research Question</a></span><span class="md-toc-item md-toc-h1" data-ref="n325"><a class="md-toc-inner" href="#header-n325">5. Choosing Model</a></span><span class="md-toc-item md-toc-h3" data-ref="n326"><a class="md-toc-inner" href="#header-n326">Perfect Recall</a></span><span class="md-toc-item md-toc-h3" data-ref="n330"><a class="md-toc-inner" href="#header-n330">Best Overall</a></span><span class="md-toc-item md-toc-h1" data-ref="n334"><a class="md-toc-inner" href="#header-n334">6. Practical Use for Audiences of Interest</a></span><span class="md-toc-item md-toc-h1" data-ref="n340"><a class="md-toc-inner" href="#header-n340">7. Weak Points &amp; Shortcomings</a></span></p></div><h1><a name='header-n2' class='md-header-anchor '></a>1. Introduction to Dataset</h1><p><strong>From <a href='https://www.kaggle.com/mlg-ulb/creditcardfraud/home' target='_blank' class='url'>https://www.kaggle.com/mlg-ulb/creditcardfraud/home</a> :</strong> </p><p>The datasets contains transactions made by credit cards in September 2013 by european cardholders. This dataset presents transactions that <strong>occurred in two days</strong>, where we have 492 frauds out of 284,807 transactions. The dataset is highly unbalanced, the positive class (frauds) account for <mark>0.172%</mark> of all transactions.</p><p><strong>PCA Features:</strong></p><p>It contains only numerical input variables which are the result of a PCA transformation. Features V1, V2, ... V28 are the principal components obtained with PCA.</p><p><strong>Time:</strong></p><p>Feature ‘Time’ contains the seconds elapsed between each transaction and the first transaction in the dataset. </p><p><strong>Amount:</strong> </p><p>The feature ‘Amount’ is the transaction Amount.</p><p><strong>Class:</strong></p><p>Feature ‘Class’ is the response variable and it takes value 1 in case of fraud and 0 otherwise.</p><h2><a name='header-n13' class='md-header-anchor '></a>Preview of Data</h2><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Time</th>
+      <th>V1</th>
+      <th>V2</th>
+      <th>V3</th>
+      <th>V4</th>
+      <th>V5</th>
+      <th>V6</th>
+      <th>V7</th>
+      <th>V8</th>
+      <th>V9</th>
+      <th>...</th>
+      <th>V21</th>
+      <th>V22</th>
+      <th>V23</th>
+      <th>V24</th>
+      <th>V25</th>
+      <th>V26</th>
+      <th>V27</th>
+      <th>V28</th>
+      <th>Amount</th>
+      <th>Class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0</td>
+      <td>-1.359807</td>
+      <td>-0.072781</td>
+      <td>2.536347</td>
+      <td>1.378155</td>
+      <td>-0.338321</td>
+      <td>0.462388</td>
+      <td>0.239599</td>
+      <td>0.098698</td>
+      <td>0.363787</td>
+      <td>...</td>
+      <td>-0.018307</td>
+      <td>0.277838</td>
+      <td>-0.110474</td>
+      <td>0.066928</td>
+      <td>0.128539</td>
+      <td>-0.189115</td>
+      <td>0.133558</td>
+      <td>-0.021053</td>
+      <td>149.62</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.0</td>
+      <td>1.191857</td>
+      <td>0.266151</td>
+      <td>0.166480</td>
+      <td>0.448154</td>
+      <td>0.060018</td>
+      <td>-0.082361</td>
+      <td>-0.078803</td>
+      <td>0.085102</td>
+      <td>-0.255425</td>
+      <td>...</td>
+      <td>-0.225775</td>
+      <td>-0.638672</td>
+      <td>0.101288</td>
+      <td>-0.339846</td>
+      <td>0.167170</td>
+      <td>0.125895</td>
+      <td>-0.008983</td>
+      <td>0.014724</td>
+      <td>2.69</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.0</td>
+      <td>-1.358354</td>
+      <td>-1.340163</td>
+      <td>1.773209</td>
+      <td>0.379780</td>
+      <td>-0.503198</td>
+      <td>1.800499</td>
+      <td>0.791461</td>
+      <td>0.247676</td>
+      <td>-1.514654</td>
+      <td>...</td>
+      <td>0.247998</td>
+      <td>0.771679</td>
+      <td>0.909412</td>
+      <td>-0.689281</td>
+      <td>-0.327642</td>
+      <td>-0.139097</td>
+      <td>-0.055353</td>
+      <td>-0.059752</td>
+      <td>378.66</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.0</td>
+      <td>-0.966272</td>
+      <td>-0.185226</td>
+      <td>1.792993</td>
+      <td>-0.863291</td>
+      <td>-0.010309</td>
+      <td>1.247203</td>
+      <td>0.237609</td>
+      <td>0.377436</td>
+      <td>-1.387024</td>
+      <td>...</td>
+      <td>-0.108300</td>
+      <td>0.005274</td>
+      <td>-0.190321</td>
+      <td>-1.175575</td>
+      <td>0.647376</td>
+      <td>-0.221929</td>
+      <td>0.062723</td>
+      <td>0.061458</td>
+      <td>123.50</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2.0</td>
+      <td>-1.158233</td>
+      <td>0.877737</td>
+      <td>1.548718</td>
+      <td>0.403034</td>
+      <td>-0.407193</td>
+      <td>0.095921</td>
+      <td>0.592941</td>
+      <td>-0.270533</td>
+      <td>0.817739</td>
+      <td>...</td>
+      <td>-0.009431</td>
+      <td>0.798278</td>
+      <td>-0.137458</td>
+      <td>0.141267</td>
+      <td>-0.206010</td>
+      <td>0.502292</td>
+      <td>0.219422</td>
+      <td>0.215153</td>
+      <td>69.99</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 31 columns</p><h1><a name='header-n16' class='md-header-anchor '></a>2. Exploratory Data Analysis</h1><p><strong>Columns:</strong></p><pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 35.1617px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 27px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -26.9966px; width: 27px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 18px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Index(['Time', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'V7', 'V8', 'V9', 'V10',</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 18px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; 'V11', 'V12', 'V13', 'V14', 'V15', 'V16', 'V17', 'V18', 'V19', 'V20',</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 18px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; 'V21', 'V22', 'V23', 'V24', 'V25', 'V26', 'V27', 'V28', 'Amount',</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 18px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; 'Class'],</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 18px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;  dtype='object')</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 183px;"></div><div class="CodeMirror-gutters" style="height: 183px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 26px;"></div></div></div></div></pre><p><strong>Data Shape:</strong></p><pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 35.1617px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 27px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>1</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -26.9966px; width: 27px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 18px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">(284807, 31)</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 23px;"></div><div class="CodeMirror-gutters" style="height: 23px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 26px;"></div></div></div></div></pre><h2><a name='header-n22' class='md-header-anchor '></a>Checking for Missing Data.</h2><ul><li>Fortunately, data integrity is perfect. All non-null, and no mixed types.</li></ul><pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang="" style="break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 43.1641px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 35px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>33</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -34.9989px; width: 35px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 26px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Data columns (total 31 columns):</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Time &nbsp; &nbsp;  284807 non-null float64</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">V1 &nbsp; &nbsp; &nbsp;  284807 non-null float64</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">V2 &nbsp; &nbsp; &nbsp;  284807 non-null float64</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">V3 &nbsp; &nbsp; &nbsp;  284807 non-null float64</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">V4 &nbsp; &nbsp; &nbsp;  284807 non-null float64</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">V5 &nbsp; &nbsp; &nbsp;  284807 non-null float64</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">V6 &nbsp; &nbsp; &nbsp;  284807 non-null float64</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">V7 &nbsp; &nbsp; &nbsp;  284807 non-null float64</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 26px;">10</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">V8 &nbsp; &nbsp; &nbsp;  284807 non-null float64</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">V9 &nbsp; &nbsp; &nbsp;  284807 non-null float64</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">12</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">V10 &nbsp; &nbsp; &nbsp; 284807 non-null float64</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">13</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">V11 &nbsp; &nbsp; &nbsp; 284807 non-null float64</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">14</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">V12 &nbsp; &nbsp; &nbsp; 284807 non-null float64</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">15</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">V13 &nbsp; &nbsp; &nbsp; 284807 non-null float64</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">16</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">V14 &nbsp; &nbsp; &nbsp; 284807 non-null float64</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">17</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">V15 &nbsp; &nbsp; &nbsp; 284807 non-null float64</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">18</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">V16 &nbsp; &nbsp; &nbsp; 284807 non-null float64</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">19</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">V17 &nbsp; &nbsp; &nbsp; 284807 non-null float64</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 26px;">20</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">V18 &nbsp; &nbsp; &nbsp; 284807 non-null float64</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">21</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">V19 &nbsp; &nbsp; &nbsp; 284807 non-null float64</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">22</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">V20 &nbsp; &nbsp; &nbsp; 284807 non-null float64</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">23</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">V21 &nbsp; &nbsp; &nbsp; 284807 non-null float64</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">24</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">V22 &nbsp; &nbsp; &nbsp; 284807 non-null float64</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">25</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">V23 &nbsp; &nbsp; &nbsp; 284807 non-null float64</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">26</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">V24 &nbsp; &nbsp; &nbsp; 284807 non-null float64</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">27</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">V25 &nbsp; &nbsp; &nbsp; 284807 non-null float64</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">28</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">V26 &nbsp; &nbsp; &nbsp; 284807 non-null float64</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">29</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">V27 &nbsp; &nbsp; &nbsp; 284807 non-null float64</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 26px;">30</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">V28 &nbsp; &nbsp; &nbsp; 284807 non-null float64</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">31</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Amount &nbsp;  284807 non-null float64</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">32</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Class &nbsp; &nbsp; 284807 non-null int64</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 26px;">33</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">dtypes: float64(30), int64(1)</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 756px;"></div><div class="CodeMirror-gutters" style="height: 756px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 34px;"></div></div></div></div></pre><p>    </p><h2><a name='header-n28' class='md-header-anchor '></a>Class Imbalance</h2><ul><li><p>This is the most unique quality about this dataset. Most of the steps taken later will be about multiple ways of dealing with imbalanced data.</p><p><strong>Distribuition of Normal(0) and Frauds(1): </strong>
+0    284315
+1       492</p></li><li><p>Non-Frauds 99.83 % of the dataset</p></li><li><p>Frauds 0.17 % of the dataset</p></li></ul><p><img src='output_8_1.png' alt='png' referrerPolicy='no-referrer' /></p><h2><a name='header-n39' class='md-header-anchor '></a>Visualizing distributions. </h2><ul><li>Features have different central tendencies and need to be normalized to make better sense of them.</li><li>‘Time’ is encoded in two days’ worth of seconds. We’ll need to transform it in order to visualize it properly.</li></ul><p><img src='output_10_0.png' alt='png' referrerPolicy='no-referrer' /></p><p>&nbsp;</p><p><img src='output_10_1.png' alt='png' referrerPolicy='no-referrer' /></p><ul><li>It’s clear that <code>Time</code> and <code>Amount</code> are in a different range compared to the <code>PCA</code> features.</li></ul><h2><a name='header-n52' class='md-header-anchor '></a>‘Amount’ Distribution</h2><ul><li>‘Amount’ isn’t normalized.</li><li>There’s high concentrations of small-amount transactions. And many dispersed large-amount outliers, all the way up to $25,000</li><li>85% of data is below $140</li><li>Top 1% of transaction amounts are between $1,017.97 and $25,691.16</li><li>80% of Frauds are less than: $152.34.</li></ul><p><img src='output_13_0.png' alt='png' referrerPolicy='no-referrer' /></p><p><img src='output_13_1.png' alt='png' referrerPolicy='no-referrer' /></p><p>&nbsp;</p><h2><a name='header-n68' class='md-header-anchor '></a>‘Time’ Distribution</h2><ul><li>I’ll convert ‘Time’ to hours and minutes, which will allow for better visualization.</li><li>‘Time’ distribution (by second) shows two normal curves, which might reveal something meaningful for predicting purposes. This will be the basis for a time-based feature engineering.</li></ul><p><strong>Raw ‘Time’, by seconds:</strong></p><p><img src='output_16_0.png' alt='png' referrerPolicy='no-referrer' /></p><p><strong>Raw ‘Time’, colored by class:</strong> (green is non-frauds, red is frauds)</p><p><img src='output_18_0.png' alt='png' referrerPolicy='no-referrer' /></p><p><strong>(Transformed) ‘Time’ in hour units, colored by class:</strong> (green is non-frauds, red is frauds)</p><p><img src='output_19_0.png' alt='png' referrerPolicy='no-referrer' /></p><h1><a name='header-n80' class='md-header-anchor '></a>3. Modeling Outcome of Interest</h1><h2><a name='header-n81' class='md-header-anchor '></a>Feature Engineering</h2><ul><li>Classification algorithms expect to receive normalized features. There are two features in the data that aren’t normalized. (‘Time’ and ‘Amount’)</li><li>New features could be created from those unprocessed features, if they capture a pattern correlated to ‘Class’.</li></ul><h3><a name='header-n87' class='md-header-anchor '></a>Time-Based Features</h3><ul><li>There seem to be two normal distributions in the feature Time. Let’s isolate them so we can create features from them.</li></ul><p><img src='output_27_0.png' alt='png' referrerPolicy='no-referrer' /></p><p>&nbsp;</p><h3><a name='header-n93' class='md-header-anchor '></a>Feature: Time_hour &gt; 4</h3><ul><li>Feature for non-frauds, where ‘Time_hour’ is above 4. This seems to have a clear differentiation.</li></ul><p><img src='output_30_0.png' alt='png' referrerPolicy='no-referrer' /></p><p>&nbsp;</p><h3><a name='header-n99' class='md-header-anchor '></a>Feature: $0 Fraud Amounts...?</h3><ul><li><p>Many transactions are zero dollars. This might be confusing for our model’s predictive ability. It is arguable these don’t need to be prevented. </p><ul><li>One approach could be to simply discard these transactions. </li><li>The second approach is to ignore it and focus on predicting transactions labeled as ‘frauds’, regardless of them having no dollar-value.</li></ul><pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 35.1617px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 27px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>4</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -26.9965px; width: 27px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -26.9965px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 18px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Non-Fraud Zero dollar Transactions:</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9965px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 18px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">1798</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9965px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 18px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Fraudulent Zero dollar Transactions:</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9965px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 18px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">27</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 92px;"></div><div class="CodeMirror-gutters" style="height: 92px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 26px;"></div></div></div></div></pre><p><strong>For now, I’ll keep them.</strong></p><h3><a name='header-n110' class='md-header-anchor '></a>Normalize Time and Amount</h3></li><li><p>Although we already captured some features from ‘Time’ and ‘Amount’, I’d like to normalize and test them in the model.</p></li></ul><h3><a name='header-n113' class='md-header-anchor '></a>Add the Rest: PCA and Class</h3><p><strong>Preview of data after feature engineering:</strong></p><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>100k_time</th>
+      <th>4_hour</th>
+      <th>amount0</th>
+      <th>scaled_amount</th>
+      <th>scaled_time</th>
+      <th>V1</th>
+      <th>V2</th>
+      <th>V3</th>
+      <th>V4</th>
+      <th>V5</th>
+      <th>...</th>
+      <th>V20</th>
+      <th>V21</th>
+      <th>V22</th>
+      <th>V23</th>
+      <th>V24</th>
+      <th>V25</th>
+      <th>V26</th>
+      <th>V27</th>
+      <th>V28</th>
+      <th>Class</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.783274</td>
+      <td>-0.994983</td>
+      <td>-1.359807</td>
+      <td>-0.072781</td>
+      <td>2.536347</td>
+      <td>1.378155</td>
+      <td>-0.338321</td>
+      <td>...</td>
+      <td>0.251412</td>
+      <td>-0.018307</td>
+      <td>0.277838</td>
+      <td>-0.110474</td>
+      <td>0.066928</td>
+      <td>0.128539</td>
+      <td>-0.189115</td>
+      <td>0.133558</td>
+      <td>-0.021053</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>-0.269825</td>
+      <td>-0.994983</td>
+      <td>1.191857</td>
+      <td>0.266151</td>
+      <td>0.166480</td>
+      <td>0.448154</td>
+      <td>0.060018</td>
+      <td>...</td>
+      <td>-0.069083</td>
+      <td>-0.225775</td>
+      <td>-0.638672</td>
+      <td>0.101288</td>
+      <td>-0.339846</td>
+      <td>0.167170</td>
+      <td>0.125895</td>
+      <td>-0.008983</td>
+      <td>0.014724</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>4.983721</td>
+      <td>-0.994972</td>
+      <td>-1.358354</td>
+      <td>-1.340163</td>
+      <td>1.773209</td>
+      <td>0.379780</td>
+      <td>-0.503198</td>
+      <td>...</td>
+      <td>0.524980</td>
+      <td>0.247998</td>
+      <td>0.771679</td>
+      <td>0.909412</td>
+      <td>-0.689281</td>
+      <td>-0.327642</td>
+      <td>-0.139097</td>
+      <td>-0.055353</td>
+      <td>-0.059752</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.418291</td>
+      <td>-0.994972</td>
+      <td>-0.966272</td>
+      <td>-0.185226</td>
+      <td>1.792993</td>
+      <td>-0.863291</td>
+      <td>-0.010309</td>
+      <td>...</td>
+      <td>-0.208038</td>
+      <td>-0.108300</td>
+      <td>0.005274</td>
+      <td>-0.190321</td>
+      <td>-1.175575</td>
+      <td>0.647376</td>
+      <td>-0.221929</td>
+      <td>0.062723</td>
+      <td>0.061458</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.670579</td>
+      <td>-0.994960</td>
+      <td>-1.158233</td>
+      <td>0.877737</td>
+      <td>1.548718</td>
+      <td>0.403034</td>
+      <td>-0.407193</td>
+      <td>...</td>
+      <td>0.408542</td>
+      <td>-0.009431</td>
+      <td>0.798278</td>
+      <td>-0.137458</td>
+      <td>0.141267</td>
+      <td>-0.206010</td>
+      <td>0.502292</td>
+      <td>0.219422</td>
+      <td>0.215153</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 34 columns</p><p>&nbsp;</p><h2><a name='header-n118' class='md-header-anchor '></a>Data Processing (On the Training Data Only)</h2><ul><li>Data processing will include class-balancing, removing outliers, and feature-selection.</li><li>These steps will be taken only on the training data, so that we can evaluate the model on the unprocessed <code>test</code> data.</li></ul><h3><a name='header-n124' class='md-header-anchor '></a>Balancing Classes</h3><p><strong>There’s several methods for balancing classes:</strong></p><hr /><ul><li>Random-Undersampling of Majority Class.</li></ul><p>You reduce the size of majority class to match size of minority class. Disadvantage is that you may end up with very little data.</p><hr /><ul><li>SMOTE- Synthetic Minority Oversampling Technique.</li></ul><p>Algorithm that creates a larger sample of minority class to match the size of majority class.</p><hr /><ul><li>Inverting Class Ratios. (Turning minority into majority)</li></ul><p>If you turn the minority into the majority, you may skew results towards better recall scores(detecting frauds correctly), as opposed to better specificity scores.(detecting non-frauds correctly)</p><hr /><p><strong>For now, I’ll balance with a variant implementation of SMOTE, called ADASYN, to see correlations.</strong></p><pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 43.1641px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 35px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><span><span>​</span>x</span></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -34.9989px; width: 35px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 26px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Data shape before balancing: (227845, 34)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Counts of frauds VS non-frauds in previous data:</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">0 &nbsp;  227451</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">1 &nbsp; &nbsp; &nbsp; 394</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">----------------------------------------</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">----------------------------------------</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Data shape after balancing: (454905, 34)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 26px;">10</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Counts of frauds VS non-frauds in new data:</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">1 &nbsp;  227454</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 26px;">12</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">0 &nbsp;  227451</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 275px;"></div><div class="CodeMirror-gutters" style="height: 275px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 34px;"></div></div></div></div></pre><p>&nbsp;</p><ul><li>Now we have much more data because the frauds were oversampled to match the size of non-frauds.</li><li>Notice that ADASYN isn’t perfectly matching the number of frauds to the majority class. This is good enough though. </li></ul><p><img src='output_47_1.png' alt='png' referrerPolicy='no-referrer' /></p><h3><a name='header-n151' class='md-header-anchor '></a>Removing High-Correlation Outliers</h3><ul><li><strong>This step must be taken after balancing classes.</strong> Otherwise, correlations will echo class-distributions. To illustrate, I’ll include two versions of the correlation matrix.</li><li>Based on a correlation matrix, we’ll identify features with high correlations, and remove any transactions with outlying values in these.</li><li>High correlation features have a high capacity to influence the algorith prediction. Therefore it’s important to control their anomalies.</li><li>This approach will reduce prediction bias because our algorithm will learn from more normally-distributed features. </li></ul><p><img src='output_49_0.png' alt='png' referrerPolicy='no-referrer' /></p><ul><li>From the feature engineered variables, it looks like <code>4_hour</code> has a very strong (negative) correlation with ‘Class’. Well, at least one was useful.</li></ul><hr /><h4><a name='header-n167' class='md-header-anchor '></a>Approach for Outlier Removal</h4><p><strong>For features of high positive correlation...</strong>
+Remove non-fraud outliers on the top range, (improve recall) and remove fraud outliers on the bottom range. (improve specificity)</p><p><strong>For features of high negative correlation...</strong>
+Remove non-fraud outliers on the bottom range, (improve recall) and remove fraud outliers on the top range. (improve specificity)</p><pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 35.1617px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 27px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>7</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -26.9966px; width: 27px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 18px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Counts of frauds VS non-frauds in previous data:</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 18px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">1 &nbsp;  227454</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 18px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">0 &nbsp;  227451</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 18px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">----------------------------------------</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 18px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Counts of frauds VS non-frauds in new data:</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 18px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">0 &nbsp;  225209</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 18px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">1 &nbsp;  220438</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 160px;"></div><div class="CodeMirror-gutters" style="height: 160px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 26px;"></div></div></div></div></pre><ul><li>Outliers from high-correlation features are now gone. However, this created a class-imbalance again. It’ll be corrected later when we undersample both classes to reduce fitting times.</li></ul><p><img src='output_57_0.png' alt='png' referrerPolicy='no-referrer' /></p><h2><a name='header-n177' class='md-header-anchor '></a>Feature Selection</h2><p>But first, let’s see what the outlier removal did to the correlations.</p><p><img src='output_60_0.png' alt='png' referrerPolicy='no-referrer' /></p><ul><li>It’s obvious that most features gained correlation power, regardless of direction. Positive correlations went higher up, negative correlations went lower down. Also, the highest correlations flattened out, while the smallest ones rose to relevance.</li><li>It is an indicator that the outliers were causing noise, and therefore dimming the correlation-potential of each feature.</li></ul><pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 35.1617px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 27px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>3</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -26.9966px; width: 27px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 18px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Data shape before feature selection: (445647, 34)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 18px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">--------------------------------------------------</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 18px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Data shape after feature selection: (445647, 23)</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 69px;"></div><div class="CodeMirror-gutters" style="height: 69px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 26px;"></div></div></div></div></pre><p>&nbsp;</p><p><img src='output_63_0.png' alt='png' referrerPolicy='no-referrer' /></p><h2><a name='header-n190' class='md-header-anchor '></a>Test and Compare Classifiers</h2><p><strong>I’ll reduce model size to 5,000 samples for each feature.</strong></p><pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 35.1617px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 27px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>4</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -26.9966px; width: 27px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 18px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">X_train shape after reduction: (10000, 22)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 18px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 18px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Counts of frauds VS non-frauds in y_train:</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 18px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">(array([0, 1]), array([5000, 5000]))</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 92px;"></div><div class="CodeMirror-gutters" style="height: 92px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 26px;"></div></div></div></div></pre><h3><a name='header-n194' class='md-header-anchor '></a>First-Run: Predictions on Default Parameters</h3><p><strong>These scores represent a baseline performance we’ll build upon.</strong></p><ul><li>They are mildly good, considering we haven’t tweaked parameters. That means our train data is doing well.</li></ul><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Train_Recall</th>
+      <th>Test_Recall</th>
+      <th>Test_Specificity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>SVC_default</th>
+      <td>0.9998</td>
+      <td>0.765306</td>
+      <td>0.991119</td>
+    </tr>
+    <tr>
+      <th>LogisticRegression_default</th>
+      <td>0.9978</td>
+      <td>0.989796</td>
+      <td>0.976611</td>
+    </tr>
+    <tr>
+      <th>DecisionTreeClassifier_default</th>
+      <td>0.998</td>
+      <td>0.989796</td>
+      <td>0.993739</td>
+    </tr>
+    <tr>
+      <th>KNeighborsClassifier_default</th>
+      <td>0.9998</td>
+      <td>0.908163</td>
+      <td>0.96722</td>
+    </tr>
+  </tbody>
+</table><h3><a name='header-n200' class='md-header-anchor '></a>Logistic Regression- GridSearch &amp; Recall Score.</h3><ul><li><code>GridSearchCV</code> compares parameter combinations to find the highest score, determined by the user. I’ll set <code>recall_score</code> to be the determinant factor for the best parameter combination.</li><li>The <code>class_weight</code> parameter greatly skews the classification emphasis from focusing on frauds at the expense of more non-fraud errors. For now, I’ll prioritize fraud prevention (Recall). Later, I’ll attempt to improve on specificity.</li></ul><pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang="" style="break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 43.1641px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 35px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>15</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -34.9989px; width: 35px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 26px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> ---------------------------------------- </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> LogisticRegression </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> ----------------------------------------</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Best parameters: </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> {'C': 0.3, 'penalty': 'l2', 'solver': 'newton-cg'} </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">TRAIN GROUP</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 26px;">10</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Cross-validation recall scores: [1. 1. 1.]</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Mean recall score: 1.0</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">12</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">13</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">TEST GROUP</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">14</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 26px;">15</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Recall: 1.0</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 344px;"></div><div class="CodeMirror-gutters" style="height: 344px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 34px;"></div></div></div></div></pre><p><strong>Confusion matrix between <code>y_test</code> data and predictions from<code>X_test</code> .</strong></p><p>The rows show the actual data, the colums show the predicted data.</p><p><img src='output_73_1.png' alt='png' referrerPolicy='no-referrer' /></p><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Train_Recall</th>
+      <th>Test_Recall</th>
+      <th>Test_Specificity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>SVC_default</th>
+      <td>0.9998</td>
+      <td>0.765306</td>
+      <td>0.991119</td>
+    </tr>
+    <tr>
+      <th>LogisticRegression_default</th>
+      <td>0.9978</td>
+      <td>0.989796</td>
+      <td>0.976611</td>
+    </tr>
+    <tr>
+      <th>DecisionTreeClassifier_default</th>
+      <td>0.998</td>
+      <td>0.989796</td>
+      <td>0.993739</td>
+    </tr>
+    <tr>
+      <th>KNeighborsClassifier_default</th>
+      <td>0.9998</td>
+      <td>0.908163</td>
+      <td>0.96722</td>
+    </tr>
+    <tr>
+      <th>LogisticRegression_search</th>
+      <td>1</td>
+      <td>1</td>
+      <td>0.934018</td>
+    </tr>
+  </tbody>
+</table><p>&nbsp;</p><h3><a name='header-n214' class='md-header-anchor '></a>Pyrrhic Victory-</h3><p><strong>A victory that inflicts such a devastating toll on the victor that it is tantamount to defeat. Someone who wins a Pyrrhic victory has also taken a heavy toll that negates any true sense of achievement.</strong></p><ul><li>Well, fraud recall improved on Logistic Regression.</li><li>However, this has come at the cost of horribly low specificity.</li><li><code>GridSearch</code> allows us to see the results that informed the choice of best parameters, based on our scoring function. In this case, <code>recall_score</code>. Let’s see how they compare.</li></ul><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>param_C</th>
+      <th>param_penalty</th>
+      <th>param_solver</th>
+      <th>params</th>
+      <th>split0_test_score</th>
+      <th>split1_test_score</th>
+      <th>split2_test_score</th>
+      <th>mean_test_score</th>
+      <th>std_test_score</th>
+      <th>rank_test_score</th>
+      <th>split0_train_score</th>
+      <th>split1_train_score</th>
+      <th>split2_train_score</th>
+      <th>mean_train_score</th>
+      <th>std_train_score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.3</td>
+      <td>l2</td>
+      <td>newton-cg</td>
+      <td>{'C': 0.3, 'penalty': 'l2', 'solver': 'newton-...</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>1</td>
+      <td>l1</td>
+      <td>saga</td>
+      <td>{'C': 1, 'penalty': 'l1', 'solver': 'saga'}</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>1</td>
+      <td>l1</td>
+      <td>liblinear</td>
+      <td>{'C': 1, 'penalty': 'l1', 'solver': 'liblinear'}</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>0.7</td>
+      <td>l2</td>
+      <td>saga</td>
+      <td>{'C': 0.7, 'penalty': 'l2', 'solver': 'saga'}</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>0.7</td>
+      <td>l2</td>
+      <td>liblinear</td>
+      <td>{'C': 0.7, 'penalty': 'l2', 'solver': 'libline...</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table><ul><li>It seems like the top 5 combinations had a perfect <code>recall_score</code>, which explain why they all have a rank of <code>1</code>. This means there was no need for a real comparison for the ‘best’ parameters, because they all were perfect. We simply got the parameters that were first on the list of <strong>perfect</strong> combinations.</li><li>Since we wanted to prioritize fraud recall, we set a very skewed <code>class_weight</code> parameter. This is why the results produced such perfect recall scores, at the expense of specificity.</li><li>Let’s find the right balance between perfect recall and higher specificity.</li></ul><h2><a name='header-n231' class='md-header-anchor '></a>Optimize Specificity, while Maintaining 100% Recall</h2><h3><a name='header-n232' class='md-header-anchor '></a>Custom Scoring Function</h3><ul><li><code>GridSearchCV</code> uses a scoring parameter to determine the best parameter combination. In the previous experiments we’ve used recall score as the basis. Now we want to pick a parameter combination that also takes specificity into account, while prioritizing perfect recall.</li></ul><p><strong>The following is a custom scoring function that will produce parameter combinations of high recall, and improved specificity.</strong></p><pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang="python" style="break-inside: unset;"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="python"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 43.1641px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 35px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>17</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -34.9989px; width: 35px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 26px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># Make a scoring function that improves specificity while identifying all frauds</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">def</span> <span class="cm-def">recall_optim</span>(<span class="cm-variable">y_true</span>, <span class="cm-variable">y_pred</span>):</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">conf_matrix</span> = <span class="cm-variable">confusion_matrix</span>(<span class="cm-variable">y_true</span>, <span class="cm-variable">y_pred</span>)</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment"># Recall will be worth a greater value than specificity</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">7</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">rec</span> = <span class="cm-variable">recall_score</span>(<span class="cm-variable">y_true</span>, <span class="cm-variable">y_pred</span>) <span class="cm-operator">*</span> <span class="cm-number">0.8</span> </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">8</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-variable">spe</span> = <span class="cm-variable">conf_matrix</span>[<span class="cm-number">0</span>,<span class="cm-number">0</span>]<span class="cm-operator">/</span><span class="cm-variable">conf_matrix</span>[<span class="cm-number">0</span>,:].<span class="cm-property">sum</span>() <span class="cm-operator">*</span> <span class="cm-number">0.2</span> </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">9</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 26px;">10</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment"># Imperfect recalls will lose a penalty</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">11</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-comment"># This means the best results will have perfect recalls and compete for specificity</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">12</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">if</span> <span class="cm-variable">rec</span> <span class="cm-operator">&lt;</span> <span class="cm-number">0.8</span>:</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">13</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-variable">rec</span> -= <span class="cm-number">0.2</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">14</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">return</span> <span class="cm-variable">rec</span> <span class="cm-operator">+</span> <span class="cm-variable">spe</span> </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">15</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 26px;">16</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-comment"># Create a scoring callable based on the scoring function</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -34.9989px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 26px;">17</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">optimize</span> = <span class="cm-variable">make_scorer</span>(<span class="cm-variable">recall_optim</span>)</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 435px;"></div><div class="CodeMirror-gutters" style="height: 435px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 34px;"></div></div></div></div></pre><h3><a name='header-n239' class='md-header-anchor '></a>Logistic Regression- Optimized</h3><pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 35.1617px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 27px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>6</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -26.9966px; width: 27px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 18px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> ---------------------------------------- </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 18px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> LogisticRegression </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 18px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> ----------------------------------------</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 18px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Best parameters: </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 18px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 18px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> {'C': 1, 'class_weight': {1: 1, 0: 0.5}, 'penalty': 'l1', 'solver': 'liblinear'} </span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 160px;"></div><div class="CodeMirror-gutters" style="height: 160px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 26px;"></div></div></div></div></pre><p><strong>Confusion matrix between <code>y_test</code> data and predictions from <code>X_test</code> .</strong></p><p>The rows show the actual data, the columns show the predicted data.</p><p><img src='output_86_1.png' alt='png' referrerPolicy='no-referrer' /></p><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Train_Recall</th>
+      <th>Test_Recall</th>
+      <th>Test_Specificity</th>
+      <th>Optimize</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>SVC_default</th>
+      <td>0.9998</td>
+      <td>0.765306</td>
+      <td>0.991119</td>
+      <td>0.610469</td>
+    </tr>
+    <tr>
+      <th>LogisticRegression_default</th>
+      <td>0.9978</td>
+      <td>0.989796</td>
+      <td>0.976611</td>
+      <td>0.787159</td>
+    </tr>
+    <tr>
+      <th>DecisionTreeClassifier_default</th>
+      <td>0.998</td>
+      <td>0.989796</td>
+      <td>0.993739</td>
+      <td>0.790585</td>
+    </tr>
+    <tr>
+      <th>KNeighborsClassifier_default</th>
+      <td>0.9998</td>
+      <td>0.908163</td>
+      <td>0.96722</td>
+      <td>0.719975</td>
+    </tr>
+    <tr>
+      <th>LogisticRegression_search</th>
+      <td>1</td>
+      <td>1</td>
+      <td>0.934018</td>
+      <td>0.986804</td>
+    </tr>
+    <tr>
+      <th>LogisticRegression_optimize</th>
+      <td>1</td>
+      <td>1</td>
+      <td>0.976787</td>
+      <td>0.995357</td>
+    </tr>
+  </tbody>
+</table><ul><li>Yes!! With our <code>optimize</code> function, specificity in <code>LogisticRegression</code> improved from <code>93%</code> to <code>97%</code>, while still having perfect recall.</li></ul><h3><a name='header-n249' class='md-header-anchor '></a>DecisionTreeClassifier- Optimized</h3><pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 35.1617px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 27px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>6</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -26.9966px; width: 27px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 18px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> ---------------------------------------- </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 18px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> DecisionTreeClassifier </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 18px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> ----------------------------------------</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 18px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Best parameters: </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 18px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 18px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> {'class_weight': {1: 1, 0: 0.5}, 'criterion': 'gini', 'max_features': None} </span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 160px;"></div><div class="CodeMirror-gutters" style="height: 160px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 26px;"></div></div></div></div></pre><p><strong>Confusion matrix between <code>y_test</code> data and predictions from <code>X_test</code> .</strong></p><p>The rows show the actual data, the columns show the predicted data.</p><p><img src='output_89_1.png' alt='png' referrerPolicy='no-referrer' /></p><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Train_Recall</th>
+      <th>Test_Recall</th>
+      <th>Test_Specificity</th>
+      <th>Optimize</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>SVC_default</th>
+      <td>0.9998</td>
+      <td>0.765306</td>
+      <td>0.991119</td>
+      <td>0.610469</td>
+    </tr>
+    <tr>
+      <th>LogisticRegression_default</th>
+      <td>0.9978</td>
+      <td>0.989796</td>
+      <td>0.976611</td>
+      <td>0.787159</td>
+    </tr>
+    <tr>
+      <th>DecisionTreeClassifier_default</th>
+      <td>0.998</td>
+      <td>0.989796</td>
+      <td>0.993739</td>
+      <td>0.790585</td>
+    </tr>
+    <tr>
+      <th>KNeighborsClassifier_default</th>
+      <td>0.9998</td>
+      <td>0.908163</td>
+      <td>0.96722</td>
+      <td>0.719975</td>
+    </tr>
+    <tr>
+      <th>LogisticRegression_search</th>
+      <td>1</td>
+      <td>1</td>
+      <td>0.934018</td>
+      <td>0.986804</td>
+    </tr>
+    <tr>
+      <th>LogisticRegression_optimize</th>
+      <td>1</td>
+      <td>1</td>
+      <td>0.976787</td>
+      <td>0.995357</td>
+    </tr>
+    <tr>
+      <th>DecisionTreeClassifier_optimize</th>
+      <td>0.9968</td>
+      <td>0.969388</td>
+      <td>0.992139</td>
+      <td>0.773938</td>
+    </tr>
+  </tbody>
+</table><ul><li>So <code>DecisionTreeClassifier</code> seems to be better at predicting non-frauds than others, but consistently misses a few frauds.</li><li>Between default and optimize scores, <code>DecisionTree</code> lost accuracy. Well, some algorithms have their limitations.</li></ul><h3><a name='header-n263' class='md-header-anchor '></a>Support Vector Classifier- Optimized</h3><pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 35.1617px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 27px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>6</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -26.9966px; width: 27px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 18px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> ---------------------------------------- </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 18px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> SVC </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 18px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> ----------------------------------------</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 18px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Best parameters: </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 18px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 18px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> {'C': 0.7, 'class_weight': {1: 1, 0: 0.7}, 'gamma': 'auto', 'kernel': 'rbf'} </span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 160px;"></div><div class="CodeMirror-gutters" style="height: 160px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 26px;"></div></div></div></div></pre><p><strong>Confusion matrix between <code>y_test</code> data and predictions from <code>X_test</code> .</strong></p><p>The rows show the actual data, the columns show the predicted data.</p><p><img src='output_92_1.png' alt='png' referrerPolicy='no-referrer' /></p><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Train_Recall</th>
+      <th>Test_Recall</th>
+      <th>Test_Specificity</th>
+      <th>Optimize</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>SVC_default</th>
+      <td>0.9998</td>
+      <td>0.765306</td>
+      <td>0.991119</td>
+      <td>0.610469</td>
+    </tr>
+    <tr>
+      <th>LogisticRegression_default</th>
+      <td>0.9978</td>
+      <td>0.989796</td>
+      <td>0.976611</td>
+      <td>0.787159</td>
+    </tr>
+    <tr>
+      <th>DecisionTreeClassifier_default</th>
+      <td>0.998</td>
+      <td>0.989796</td>
+      <td>0.993739</td>
+      <td>0.790585</td>
+    </tr>
+    <tr>
+      <th>KNeighborsClassifier_default</th>
+      <td>0.9998</td>
+      <td>0.908163</td>
+      <td>0.96722</td>
+      <td>0.719975</td>
+    </tr>
+    <tr>
+      <th>LogisticRegression_search</th>
+      <td>1</td>
+      <td>1</td>
+      <td>0.934018</td>
+      <td>0.986804</td>
+    </tr>
+    <tr>
+      <th>LogisticRegression_optimize</th>
+      <td>1</td>
+      <td>1</td>
+      <td>0.976787</td>
+      <td>0.995357</td>
+    </tr>
+    <tr>
+      <th>DecisionTreeClassifier_optimize</th>
+      <td>0.9968</td>
+      <td>0.969388</td>
+      <td>0.992139</td>
+      <td>0.773938</td>
+    </tr>
+    <tr>
+      <th>SVC_optimize</th>
+      <td>1</td>
+      <td>0.765306</td>
+      <td>0.986811</td>
+      <td>0.609607</td>
+    </tr>
+  </tbody>
+</table><ul><li>SVC’s scores have the most disparity between train and test sets. Train splits had perfect recall, but test set was very poor.</li><li>Compared with its default settings, its score also decreased. SVC can be very good at learning from train data, but it’s very sensitive when tested in different data.</li></ul><h3><a name='header-n276' class='md-header-anchor '></a>KNeighborsClassifier- Optimized</h3><pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 35.1617px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 27px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>6</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -26.9966px; width: 27px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 18px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> ---------------------------------------- </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 18px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> KNeighborsClassifier </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 18px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> ----------------------------------------</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 18px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Best parameters: </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 18px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 18px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> {'algorithm': 'ball_tree', 'leaf_size': 20, 'n_neighbors': 2, 'p': 1} </span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 160px;"></div><div class="CodeMirror-gutters" style="height: 160px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 26px;"></div></div></div></div></pre><p><strong>Confusion matrix between <code>y_test</code> data and predictions from <code>X_test</code> .</strong></p><p>The rows show the actual data, the columns show the predicted data.</p><p><img src='output_95_1.png' alt='png' referrerPolicy='no-referrer' /></p><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Train_Recall</th>
+      <th>Test_Recall</th>
+      <th>Test_Specificity</th>
+      <th>Optimize</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>SVC_default</th>
+      <td>0.9998</td>
+      <td>0.765306</td>
+      <td>0.991119</td>
+      <td>0.610469</td>
+    </tr>
+    <tr>
+      <th>LogisticRegression_default</th>
+      <td>0.9978</td>
+      <td>0.989796</td>
+      <td>0.976611</td>
+      <td>0.787159</td>
+    </tr>
+    <tr>
+      <th>DecisionTreeClassifier_default</th>
+      <td>0.998</td>
+      <td>0.989796</td>
+      <td>0.993739</td>
+      <td>0.790585</td>
+    </tr>
+    <tr>
+      <th>KNeighborsClassifier_default</th>
+      <td>0.9998</td>
+      <td>0.908163</td>
+      <td>0.96722</td>
+      <td>0.719975</td>
+    </tr>
+    <tr>
+      <th>LogisticRegression_search</th>
+      <td>1</td>
+      <td>1</td>
+      <td>0.934018</td>
+      <td>0.986804</td>
+    </tr>
+    <tr>
+      <th>LogisticRegression_optimize</th>
+      <td>1</td>
+      <td>1</td>
+      <td>0.976787</td>
+      <td>0.995357</td>
+    </tr>
+    <tr>
+      <th>DecisionTreeClassifier_optimize</th>
+      <td>0.9968</td>
+      <td>0.969388</td>
+      <td>0.992139</td>
+      <td>0.773938</td>
+    </tr>
+    <tr>
+      <th>SVC_optimize</th>
+      <td>1</td>
+      <td>0.765306</td>
+      <td>0.986811</td>
+      <td>0.609607</td>
+    </tr>
+    <tr>
+      <th>KNeighborsClassifier_optimize</th>
+      <td>1</td>
+      <td>0.897959</td>
+      <td>0.990328</td>
+      <td>0.716433</td>
+    </tr>
+  </tbody>
+</table><h3><a name='header-n284' class='md-header-anchor '></a>Imblearn’ BalancedRandomForest- Optimized</h3><ul><li>This algorithm incorporates a RandomForestClassifier with a RandomUndersampling algorithm to balance classes according to the <code>sampling_strategy</code> parameter.</li></ul><pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 35.1617px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 27px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>6</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -26.9966px; width: 27px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 18px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> ---------------------------------------- </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 18px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> BalancedRandomForestClassifier </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 18px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> ----------------------------------------</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 18px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Best parameters: </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 18px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 18px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> {'class_weight': {1: 1, 0: 0.6}, 'sampling_strategy': 'all'} </span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 137px;"></div><div class="CodeMirror-gutters" style="height: 137px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 26px;"></div></div></div></div></pre><p><strong>Confusion matrix between <code>y_test</code> data and predictions from <code>X_test</code> .</strong></p><p>The rows show the actual data, the columns show the predicted data.</p><p><img src='output_97_1.png' alt='png' referrerPolicy='no-referrer' /></p><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Train_Recall</th>
+      <th>Test_Recall</th>
+      <th>Test_Specificity</th>
+      <th>Optimize</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>SVC_default</th>
+      <td>0.9998</td>
+      <td>0.765306</td>
+      <td>0.991119</td>
+      <td>0.610469</td>
+    </tr>
+    <tr>
+      <th>LogisticRegression_default</th>
+      <td>0.9978</td>
+      <td>0.989796</td>
+      <td>0.976611</td>
+      <td>0.787159</td>
+    </tr>
+    <tr>
+      <th>DecisionTreeClassifier_default</th>
+      <td>0.998</td>
+      <td>0.989796</td>
+      <td>0.993739</td>
+      <td>0.790585</td>
+    </tr>
+    <tr>
+      <th>KNeighborsClassifier_default</th>
+      <td>0.9998</td>
+      <td>0.908163</td>
+      <td>0.96722</td>
+      <td>0.719975</td>
+    </tr>
+    <tr>
+      <th>LogisticRegression_search</th>
+      <td>1</td>
+      <td>1</td>
+      <td>0.934018</td>
+      <td>0.986804</td>
+    </tr>
+    <tr>
+      <th>LogisticRegression_optimize</th>
+      <td>1</td>
+      <td>1</td>
+      <td>0.976787</td>
+      <td>0.995357</td>
+    </tr>
+    <tr>
+      <th>DecisionTreeClassifier_optimize</th>
+      <td>0.9968</td>
+      <td>0.969388</td>
+      <td>0.992139</td>
+      <td>0.773938</td>
+    </tr>
+    <tr>
+      <th>SVC_optimize</th>
+      <td>1</td>
+      <td>0.765306</td>
+      <td>0.986811</td>
+      <td>0.609607</td>
+    </tr>
+    <tr>
+      <th>KNeighborsClassifier_optimize</th>
+      <td>1</td>
+      <td>0.897959</td>
+      <td>0.990328</td>
+      <td>0.716433</td>
+    </tr>
+    <tr>
+      <th>BalancedRandomForestClassifier_optimize</th>
+      <td>0.9992</td>
+      <td>0.989796</td>
+      <td>0.99395</td>
+      <td>0.790627</td>
+    </tr>
+  </tbody>
+</table><ul><li>Our best overall scores on test group. Recal wasn’t perfect, but it has the highest combination of scores.</li></ul><h3><a name='header-n297' class='md-header-anchor '></a>SKlearn’ RandomForestClassifier- Optimized</h3><ul><li>This is the good ol’ <code>RandomForestClassifier</code> from Sklearn. It’s a less specialized implementation. We’ll see how it stacks against Imblearn’s implementation.</li></ul><pre spellcheck="false" class="md-fences md-end-block md-fences-with-lineno ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 35.1617px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 27px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>6</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: -26.9966px; width: 27px;"></div><div class="CodeMirror-gutter-wrapper CodeMirror-activeline-gutter" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 18px;">1</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> ---------------------------------------- </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 18px;">2</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> RandomForestClassifier </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 18px;">3</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> ----------------------------------------</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 18px;">4</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Best parameters: </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 18px;">5</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -26.9966px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt CodeMirror-linenumber-show" style="left: 0px; width: 18px;">6</div></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> {'class_weight': {1: 1, 0: 7}, 'criterion': 'entropy'} </span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 137px;"></div><div class="CodeMirror-gutters" style="height: 137px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 26px;"></div></div></div></div></pre><p><strong>Confusion matrix between <code>y_test</code> data and predictions from <code>X_test</code> .</strong></p><p>The rows show the actual data, the columns show the predicted data.</p><p><img src='output_99_1.png' alt='png' referrerPolicy='no-referrer' /></p><ul><li>For overall-accuracy, I added a column below, <code>Mean_RecSpe</code>, which is the mean score between <code>Test_Recall</code>, <code>Test_Specificity</code>.</li><li><code>Optimize</code> is our custom-made score, which rewards perfect recalls, and prioritizes high specificity.</li></ul><p>Those are our main criteria. </p><table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Train_Recall</th>
+      <th>Test_Recall</th>
+      <th>Test_Specificity</th>
+      <th>Optimize</th>
+      <th>Mean_RecSpe</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>SVC_default</th>
+      <td>0.9998</td>
+      <td>0.765306</td>
+      <td>0.991119</td>
+      <td>0.610469</td>
+      <td>0.878213</td>
+    </tr>
+    <tr>
+      <th>LogisticRegression_default</th>
+      <td>0.9978</td>
+      <td>0.989796</td>
+      <td>0.976611</td>
+      <td>0.787159</td>
+      <td>0.983203</td>
+    </tr>
+    <tr>
+      <th>DecisionTreeClassifier_default</th>
+      <td>0.998</td>
+      <td>0.989796</td>
+      <td>0.993739</td>
+      <td>0.790585</td>
+      <td>0.991768</td>
+    </tr>
+    <tr>
+      <th>KNeighborsClassifier_default</th>
+      <td>0.9998</td>
+      <td>0.908163</td>
+      <td>0.96722</td>
+      <td>0.719975</td>
+      <td>0.937692</td>
+    </tr>
+    <tr>
+      <th>LogisticRegression_search</th>
+      <td>1</td>
+      <td>1</td>
+      <td>0.934018</td>
+      <td>0.986804</td>
+      <td>0.967009</td>
+    </tr>
+    <tr>
+      <th>LogisticRegression_optimize</th>
+      <td>1</td>
+      <td>1</td>
+      <td>0.976787</td>
+      <td>0.995357</td>
+      <td>0.988393</td>
+    </tr>
+    <tr>
+      <th>DecisionTreeClassifier_optimize</th>
+      <td>0.9968</td>
+      <td>0.969388</td>
+      <td>0.992139</td>
+      <td>0.773938</td>
+      <td>0.980763</td>
+    </tr>
+    <tr>
+      <th>SVC_optimize</th>
+      <td>1</td>
+      <td>0.765306</td>
+      <td>0.986811</td>
+      <td>0.609607</td>
+      <td>0.876058</td>
+    </tr>
+    <tr>
+      <th>KNeighborsClassifier_optimize</th>
+      <td>1</td>
+      <td>0.897959</td>
+      <td>0.990328</td>
+      <td>0.716433</td>
+      <td>0.944143</td>
+    </tr>
+    <tr>
+      <th>BalancedRandomForestClassifier_optimize</th>
+      <td>0.9992</td>
+      <td>0.989796</td>
+      <td>0.99395</td>
+      <td>0.790627</td>
+      <td>0.991873</td>
+    </tr>
+    <tr>
+      <th>RandomForestClassifier_optimize</th>
+      <td>0.9994</td>
+      <td>0.989796</td>
+      <td>0.99534</td>
+      <td>0.790905</td>
+      <td>0.992568</td>
+    </tr>
+  </tbody>
+</table><ul><li>The traditional <code>RandomForestClassifier</code> was slightly better when put to test against the more specialized <code>BalancedRandomForestClassifier</code>.</li></ul><h1><a name='header-n316' class='md-header-anchor '></a>4. Research Question</h1><p><strong>What is the best way to predict frauds?</strong> (Pick an approach...)</p><ul><li>Focus on reducing false negatives.
+VS</li><li>Focus on reducing false positives.
+VS</li><li>Focus on a custom balance?</li></ul><h1><a name='header-n325' class='md-header-anchor '></a>5. Choosing Model</h1><h3><a name='header-n326' class='md-header-anchor '></a>Perfect Recall</h3><ul><li>Judged by perfect recall and high specificity, <code>LogisticRegression</code> had the highest optimized score with <code>97%</code> specificity and <code>100%</code> recall.</li></ul><h3><a name='header-n330' class='md-header-anchor '></a>Best Overall</h3><ul><li>For a more flexible approach, <code>RandomForestClassifier</code> had the highest combined recall and specificity with only one missed fraud and <code>99%</code> specificity.</li></ul><h1><a name='header-n334' class='md-header-anchor '></a>6. Practical Use for Audiences of Interest</h1><ul><li><strong>Bank’s fraud-prevention mechanisms. </strong>
+(Annoying: Transactions canceled when traveling)</li><li><strong>Data Science students.</strong>
+Addition to the pool of Kaggle’s forks on this Dataset.</li></ul><h1><a name='header-n340' class='md-header-anchor '></a>7. Weak Points &amp; Shortcomings</h1><ul><li><p><strong>Model Processing</strong>- Involves many steps. Steps depend immensely on the data. This doesn’t lend itself to quick iterations. </p><ul><li>Could’ve used a processing pipeline function, but that’s a more advanced method I haven’t experimented with.</li></ul></li><li><p><strong>Need for Data Reduction</strong>- 270,000 non-frauds were undersampled to 5,000… Definitely affected accuracy. A supercomputer might handle complete set without the need for reduction. 
+SVM and Kneighbors took the longest, even after undersampling the train data.</p></li></ul></div>
+</body>
+</html>
